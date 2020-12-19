@@ -1,0 +1,26 @@
+.SYInputMoney{
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    box-shadow: 0 0 0 0;
+    :global{
+        .ant-input-number-input{
+            padding-bottom: 5px;
+            padding-left: 14px;
+        }
+        .ant-form-item-label{
+            font-size:14px;
+            font-family:PingFangSC-Regular,PingFang SC;
+            font-weight:400;
+            color:rgba(51,51,51,1);
+            line-height:20px;
+        }
+        .ant-input-number-handler-wrap{
+            display:none
+        }
+    }
+}
+.ant-input-number:focus{
+    border-color: #039be5;
+    box-shadow: 0 1px 0 rgba(82, 168, 236, 0.6);
+}

@@ -1,0 +1,31 @@
+---
+name: MultiplePavementSelection
+route: /MultiplePavementSelection
+sidebar: true
+---
+
+import { Playground, Props } from 'docz';
+import { MultiplePavementSelection } from "../../";
+
+# 支持多选的平铺框组件
+
+<Playground>
+<MultiplePavementSelection
+    dataSource={[{ value: '1', label: '张三' }, { value: '2', label: '李四' }, { value: '3', label: '王五' }]}
+    title='label'
+    checked={['1', '2']}
+    checkedName='value'
+ />
+</Playground>
+
+
+## API
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| dataSource | 数据 | array | - |
+| title | 数据label名 | string | - |
+| checked | 返显数据 | array | - |
+| checkedName | 返显数据的value名，跟checked关联 | sttring | - |
+
+

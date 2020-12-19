@@ -1,0 +1,36 @@
+---
+name: SYTextArea
+route: /SYTextArea
+sidebar: true
+---
+import { Playground, Props } from 'docz';
+import { SYTextArea } from "../../";
+
+
+# SYTextArea
+
+- 文本域组件
+
+<Playground>
+        <SYTextArea textareaId={"ffff"} defaultValue="大师傅士大夫士大夫" autosize placeholder='请输入' count={100} />
+</Playground>
+
+
+# SYTextArea
+
+-  文本域组件
+
+## API
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| textareaId | 组件唯一标识（建议引用多次组件时使用） | String | "SYTextArea1" |
+| autosize | 是否高度自适应 | Boolean | false |
+| defaultValue | 默认值 | String | '' |
+| count | 输入值最大长度 | Number | 50 |
+| placeholder | placeholder值 | String | "请输入" |
+| className | 组件class样式 | String | "" |
+| onChange | 输入值改变回调 | (value) => void | - |
+
+
+

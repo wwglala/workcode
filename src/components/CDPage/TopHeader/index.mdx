@@ -1,0 +1,35 @@
+---
+name: TopHeader
+route: /TopHeader
+sidebar: true
+---
+
+import { Playground, Props } from 'docz';
+import { TopHeader } from "../../";
+import avatar from '../../assets/img/empty.png'
+import badge from '../../assets/img/badge.png'
+
+# 页面头部用户信息组件
+
+<Playground>
+<TopHeader
+userInfo={{
+  avatar,
+  badge,
+  name:'张三' ,
+  des:'党员' ,
+  belong:'神玥软件/党建及政务事业部/党建研发部/研发二组' ,
+  location:'地址' ,
+  time:'时间',
+}}
+ />
+</Playground>
+
+
+## API
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| userInfo | 头部信息 | - | - |
+
+

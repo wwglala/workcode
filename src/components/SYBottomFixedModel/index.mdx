@@ -1,0 +1,52 @@
+---
+name: SYBottomFixedModel
+route: /SYBottomFixedModel
+sidebar: true
+---
+
+import { Playground, Props } from 'docz';
+import { SYBottomFixedModel } from "../../";
+import { Button, Calendar, Input } from 'antd';
+import { observer, inject } from 'mobx-react'
+
+# SYBottomFixedModel 
+
+- 查看样式时把下面visible值改为true
+
+## SYBottomFixedModel包含日历组件和自定义底部
+    showModal = () => {
+        this.setState({
+        visible: true,
+        });
+    };
+
+    handleOk = e => {
+        console.log(e);
+        this.setState({
+        visible: false,
+        });
+    };
+
+    handleCancel = e => {
+        console.log(e);
+        this.setState({
+        visible: false,
+        });
+    };
+<Playground>
+    <SYBottomFixedModel width={'80%'} title={'审查'} visible={false} footer={<Input placeholder="1111111" />} handleCancel={ () => {console.log('111')}}  handleOk={ () => {console.log('222')}}>
+        <Calendar />
+    </SYBottomFixedModel>
+</Playground>
+
+## API
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| title | 标题 | string  | '类别' |
+| visible | 是否可以切换选中项 | bool | false |
+| width | model宽度 | Number、String | 800 、'80%' |
+| footer | 固定条里面的内容 | ReactNode | - |
+| destroyOnClose | 关闭时销毁 Modal 里的子元素 | bool | false |
+| handleOk | 选中确定按钮触发事件 | 	(val): void |  |
+| handleCancel | 选中取消按钮触发事件 | 	(val): void |  |

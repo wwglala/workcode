@@ -1,0 +1,50 @@
+---
+name: PavementSelectionNew
+route: /PavementSelectionNew
+sidebar: true
+---
+
+import { Playground, Props } from 'docz';
+import { PavementSelectionNew } from "../../";
+import { observer, inject } from 'mobx-react'
+
+# PavementSelectionNew 
+
+- 超出父组件宽度自动显示为省略号，鼠标移入显示提示信息。
+
+## 有label 并且禁用设置了默认选中项
+<Playground>
+    <PavementSelectionNew
+        label="选择"
+        selectedTags={'1'}
+        onChange={value => {
+            console.log('1', value)
+        }}
+        dataSource={[
+            { value: '0', label: '同公司' },
+            { value: '1', label: '跨公司' },
+        ]}
+    />
+</Playground>
+
+## 没有label 不禁用
+<Playground>
+    <PavementSelectionNew 
+        onChange={ value => { console.log('1', value) }}
+        dataSource={[
+            { value: '', label: '全日制' },
+            { value: '1', label: '本科' }, 
+            { value: '2', label: '专科' }
+        ]}
+    />
+</Playground>
+
+## API
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| title | 标题 | string  | '类别' |
+| disabled | 是否可以切换选中项 | bool | false |
+| selectedTags | 默认选中项,填写数据为需要选中项的value | { vlaue } | - |
+| dataSource | 数据源 | Array<{ value, label }> |  |
+| onChange | 选中触发事件 | 	(val): void |  |

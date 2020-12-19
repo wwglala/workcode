@@ -1,0 +1,105 @@
+<!--
+ * @Date: 2020-04-20 16:30:08
+ * @LastEditTime: 2020-05-19 15:53:50
+ * @Description: file content
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <script>
+      window.getUrlParams=(name)=>{
+        console.log('location--->', window.location)
+        var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)");
+        var r = window.location.hash.split('?')[1] && window.location.hash.split('?')[1].match(reg);
+        // 这一块 从url截取参数  方法已经不适用了 就这
+        // 现在是hashhistory
+        // 再修改一遍看看你生效没有
+        // console.log('r--->', r)
+        if(r && r!==null){
+          return decodeURI(r[2]);
+        }else{
+          return r;
+        }
+      }
+        // window.config=getConfig();
+      //  alert(config.gjjjg)
+      window.openTab=decodeURI(getUrlParams('openTab'))
+      window.ywJson={};
+      ywJson.zxbm=getUrlParams('zxbm');
+      ywJson.jgbm=getUrlParams('jgbm');
+      ywJson.khbh=getUrlParams('khbh');
+      ywJson.userid=getUrlParams('userid');
+      ywJson.zjhm=getUrlParams('zjhm');
+
+      window.bpmJson={};
+      bpmJson.bpmid=getUrlParams('bpmid');
+      bpmJson.taskid=getUrlParams('taskid');
+      bpmJson.processInstanceId=getUrlParams('processInstanceId');
+      bpmJson.flowable=getUrlParams('flowtype');
+      window.ticket = {}
+      window.ticketbf = {}
+      ticket = getUrlParams('ticket')
+      window.ztConfigValue={}
+      window.ztConfig=getUrlParams('ztConfig')
+      window.qycode= getUrlParams('qycode')
+      console.log('openURL------->',window.location.href,window.openTab);
+    </script>
+    <style>
+
+    </style>
+    <title>React App</title>
+    <link href="https://www.gjj12329.cn/jby/dm-lib/antd/3.25.3/antd.min.css" rel="stylesheet">
+    <script>
+      document.writeln('<script src="/configHttp.js"'+'>'+'<'+'/'+'script>');
+    </script>
+    <!-- <link href="http://113.125.201.131:16004/shineyue-component/1.12.71/demo/style.css" rel="stylesheet"> -->
+    <script>
+      document.writeln('<link href="'+window.configHttp.host+'/DigitalEnterpriseManagement/shineyue-component-pc/style.css" rel="stylesheet">')
+    </script>
+  </head>
+  <script>
+    document.writeln('<script src="/configHttp.js"'+'>'+'<'+'/'+'script>');
+  </script>
+  <script>
+      window.uploadConfig = getUploadConfig()
+      window.reportUrl = getReportUrl()
+      window.pcReportUrl = getPcReportUrl()
+      window.getDownLoadUrl = getDownLoadUrl()
+      window.getNewTabIpPort = getNewTabIpPort()
+      window.getJumpParams = getJumpParams()
+      window.hxZtConfig = getHxZtConfig()
+      window.getConfig = getConfig()
+  </script>
+  <body style="background-color: #eee;">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/babel-polyfill/7.8.7/polyfill.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/ajax/libs/crypto-js/4.0.0/index.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/moment.js/2.24.0/locale/en-gb.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/moment.js/2.24.0/locale/zh-cn.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/react/16.10.2/umd/react.production.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/react-dom/16.10.2/umd/react-dom.production.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/react-router-dom/5.1.2/react-router-dom.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/lodash.js/4.17.15/lodash.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/antd/3.25.3/antd.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/mobx/4.12.0/mobx.umd.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/mobx-react/5.1.2/index.min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/dm-lib/Mock.js/1.0.1-beta3/mock-min.js"></script>
+    <script src="https://www.gjj12329.cn/jby/electron-lib/sywin.js"></script>
+    <!-- <script>
+      document.writeln('<link href="'+window.configHttp.host+'/DigitalEnterpriseManagement/shineyue-component-pc/style.css" rel="stylesheet">')
+    </script> -->
+    <script>
+      document.writeln('<script src="'+window.configHttp.host+'/DigitalEnterpriseManagement/shineyue-component-pc/index.umd.js">'+'<'+'/'+'script>')
+    </script>
+
+  </body>
+</html>

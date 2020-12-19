@@ -1,0 +1,53 @@
+---
+name: SYInputMoney
+route: /SYInputMoney
+sidebar: true
+---
+
+import { Playground, Props } from 'docz';
+import { SYInputMoney } from "../../";
+import { observer, inject } from 'mobx-react'
+import { Button, Form } from 'antd'
+
+# SYInputMoney 
+
+表单中使用该组件代码样式
+    <Form>
+        <Form.Item label='借款金额（万元）：'>
+        {getFieldDecorator('money', {
+            rules: [
+            {
+                required: true, message: '请输入借款金额'
+            }]
+        })(<SYInputMoney
+            width='200px'
+            placeholder='金额'
+            label='借款（万元）'
+            disabled={false}
+            precision={3}
+            onChange={val => console.log('1', val)}
+        />)}
+        </Form.Item>
+    </Form>
+表单中使用该组件代码样式
+
+## SYInputMoney包含日历组件和自定义底部
+<Playground>
+    <SYInputMoney
+        width='200px'
+        placeholder='金额'
+        disabled={false}
+        precision={3}
+        onChange={val => console.log('1', val)}
+    />
+</Playground>
+
+## API
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| placeholder | 输入提示 | string  | '请输入' |
+| disabled | 是否禁用 | bool | false |
+| width | 宽度 | Number、String | '80%' |
+| precision | 数值精度 | number | 2 |
+| onChange | 变化回调 | (val): void |  |

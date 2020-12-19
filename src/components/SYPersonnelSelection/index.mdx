@@ -1,0 +1,47 @@
+---
+name: SYPersonnelSelection
+route: /SYPersonnelSelection
+sidebar: true
+---
+
+import { Playground, Props } from 'docz';
+import { SYPersonnelSelection } from "../../";
+
+# SYPersonnelSelection
+
+## API
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| type | 选择控制: 'all','dept','person' | String | all |
+| deptName	| 部门文案 | String | 部门名称 |
+| personName | 人员文案 | String | 参会人 |
+| dataSource | 部门数据源 | [] | - |
+| dataSourcePerson	|人员数据源	| [] | - |
+| onClick | 部门点击添加触发事件 | () => {} | - |
+| onClickPerson | 人员点击添加触发事件 | () => {} | - |
+| CallbackData,CallbackDataPerson | 点击删除执行的回调并返回数据 | (data) => {} | - |
+
+- 添加按钮功能为其他业务组件
+
+## 直接使用目录组件
+
+<Playground>
+<SYPersonnelSelection
+    dataSource={[{
+    img: 'https://s3.amazonaws.com/uifaces/faces/twitter/muringa/128.jpg',
+    name: '部门1'
+    }, {
+    img: 'https://s3.amazonaws.com/uifaces/faces/twitter/ceekaytweet/128.jpg',
+    name: '部门2'
+    }, {
+    img: 'https://s3.amazonaws.com/uifaces/faces/twitter/diesellaws/128.jpg',
+    name: '部门3'
+    }]}
+    dataSourcePerson={[]}
+    onClick={() => { console.log('onClick') }}
+    onClickPerson={() => { console.log('onClickPerson') }}
+    CallbackData={data => console.log('data', data.slice())}
+    CallbackDataPerson={data => console.log('dataPerson', data.slice())}
+/>
+</Playground>

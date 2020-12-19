@@ -1,0 +1,7 @@
+/config
+/node_modules
+/public
+/scripts
+/build
+/src/utils
+*.test.js
